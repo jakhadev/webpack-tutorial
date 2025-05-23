@@ -1,3 +1,4 @@
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = (env) => {
@@ -9,5 +10,11 @@ module.exports = (env) => {
       filename: "[name].[contenthash].bundle.js",
       clean: true,
     },
+    plugins: [
+      new HtmlWebpackPlugin({
+        template: path.resolve(__dirname, "public", "index.html"),
+        filename: "index.html",
+      }),
+    ],
   };
 };
