@@ -1,9 +1,14 @@
-const DotenvWebpackPlugin = require("dotenv-webpack");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const path = require("path");
+import DotenvWebpackPlugin from "dotenv-webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import path from "path";
+import { Configuration } from "webpack";
 
-module.exports = (env) => {
-  return {
+interface Env {
+  mode: "development" | "production";
+}
+
+export default (env: Env) => {
+  const config: Configuration = {
     mode: env.mode || "development",
     entry: path.resolve(__dirname, "src", "app.ts"),
     module: {
@@ -31,4 +36,5 @@ module.exports = (env) => {
       new DotenvWebpackPlugin(),
     ],
   };
+  return config;
 };
