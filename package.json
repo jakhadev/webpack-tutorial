@@ -1,0 +1,36 @@
+{
+  "name": "webpack",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+    "dev": "webpack --env mode=development",
+    "build": "webpack --env mode=production",
+    "start": "webpack serve --env mode=development"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jakhadev/webpack-tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jakhadev/webpack-tutorial/issues"
+  },
+  "homepage": "https://github.com/jakhadev/webpack-tutorial#readme",
+  "devDependencies": {
+    "@types/dotenv-webpack": "^7.0.8",
+    "@types/node": "^22.15.21",
+    "@types/webpack": "^5.28.5",
+    "@types/webpack-dev-server": "^4.7.1",
+    "dotenv-webpack": "^8.1.0",
+    "html-webpack-plugin": "^5.6.3",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.9",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.1"
+  }
+}
