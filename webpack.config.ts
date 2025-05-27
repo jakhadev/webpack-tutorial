@@ -30,7 +30,8 @@ export default (env: Env) => {
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
     },
-    devServer: devServer,
+    devServer: env.mode === "development" ? devServer : undefined,
+    devtool: env.mode === "development" ? "source-map" : false,
     output: {
       path: path.resolve(__dirname, "build"),
       filename: "[name].[contenthash].bundle.js",
