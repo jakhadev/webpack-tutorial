@@ -17,11 +17,11 @@ export default (env: Env) => {
   };
   const config: Configuration = {
     mode: env.mode || "development",
-    entry: path.resolve(__dirname, "src", "app.ts"),
+    entry: path.resolve(__dirname, "src", "main.tsx"),
     module: {
       rules: [
         {
-          test: /\.tsx?$/,
+          test: /\.(ts|tsx)?$/,
           use: "ts-loader",
           exclude: /node_modules/,
         },
