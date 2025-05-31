@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Filter from "./filter";
+import "./app.scss";
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -9,7 +10,9 @@ const App = () => {
       <Filter />
 
       <h1>Count: {count}</h1>
-      <button onClick={increment}>Increment</button>
+      <button onClick={increment} className="button">
+        Increment
+      </button>
     </div>
   );
 };
