@@ -20,7 +20,7 @@ export function buildConfig(options: BuildType): Configuration {
     module: {
       rules: buildLoaders({ mode: options.mode }),
     },
-    resolve: buildResolvers(),
+    resolve: buildResolvers(options),
     devServer: buildDevServer({ mode: options.mode }),
     devtool: options.mode === "development" ? "source-map" : false,
   };

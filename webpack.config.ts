@@ -12,6 +12,7 @@ export default (env: Env) => {
     entry: path.resolve(__dirname, "src", "main.tsx"),
     output: path.resolve(__dirname, "build"),
     html: path.resolve(__dirname, "public", "index.html"),
+    src: path.resolve(__dirname, "src"),
   };
 
   return buildConfig({
