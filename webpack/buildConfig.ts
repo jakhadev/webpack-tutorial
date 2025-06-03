@@ -13,6 +13,7 @@ export function buildConfig(options: BuildType): Configuration {
     output: {
       path: options.path.output,
       filename: "[name].[contenthash].bundle.js",
+      chunkFilename: "[name].[contenthash].chunk.js",
       clean: true,
     },
     plugins: buildPlugins(options),
