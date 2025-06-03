@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Filter from "./filter";
-import "./app.scss";
+import styles from "./app.module.scss";
 
 const App = () => {
   const [count, setCount] = useState(0);
@@ -9,8 +9,8 @@ const App = () => {
     <div>
       <Filter />
 
-      <h1>Count: {count}</h1>
-      <button onClick={increment} className="button">
+      <h1 className={styles.title}>Count: {count}</h1>
+      <button onClick={increment} className={styles.button}>
         Increment
       </button>
     </div>

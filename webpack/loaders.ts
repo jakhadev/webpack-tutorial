@@ -8,11 +8,25 @@ export function buildLoaders({ mode }: BuildType): RuleSetRule[] {
     use: "ts-loader",
     exclude: /node_modules/,
   };
+
+  const cssLoaderWithModule = {
+    loader: "css-loader",
+    options: {
+      modules: {
+        namedExport: false,
+        localIdentName:
+          mode === "production"
+            ? "[hash:base64]"
+            : "[name]__[local]--[hash:base64:5]",
+      },
+    },
+  };
+
   const cssLoader = {
-    test: /\.scss$/i,
+    test: /\.s[ac]ss$/i,
     use: [
       mode === "production" ? MiniCssExtractPlugin.loader : "style-loader",
-      "css-loader",
+      cssLoaderWithModule,
       "sass-loader",
     ],
   };
