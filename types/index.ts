@@ -5,10 +5,11 @@ export interface BuildPaths {
   output: string;
   html: string;
   src: string;
+  public: string;
 }
 
 export interface BuildType {
-  path?: BuildPaths;
+  paths?: BuildPaths;
   mode?: BuildMode;
   port?: number;
 }

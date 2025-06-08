@@ -8,10 +8,10 @@ import { buildPlugins } from "./plugins";
 export function buildConfig(options: BuildType): Configuration {
   return {
     mode: options.mode,
-    entry: options.path.entry,
+    entry: options.paths.entry,
 
     output: {
-      path: options.path.output,
+      path: options.paths.output,
       filename: "[name].[contenthash].bundle.js",
       chunkFilename: "[name].[contenthash].chunk.js",
       clean: true,

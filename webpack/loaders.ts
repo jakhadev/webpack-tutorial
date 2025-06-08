@@ -9,7 +9,7 @@ export function buildLoaders({ mode }: BuildType): RuleSetRule[] {
     exclude: /node_modules/,
     use: [
       {
-        loader: require.resolve("ts-loader"),
+        loader: "ts-loader",
         options: {
           getCustomTransformers: () => ({
             before: [mode === "development" && ReactRefreshTypeScript()].filter(
