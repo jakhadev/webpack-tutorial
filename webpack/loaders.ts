@@ -31,5 +31,25 @@ export function buildLoaders({ mode }: BuildType): RuleSetRule[] {
     ],
   };
 
-  return [tsLoader, cssLoader];
+  const assetsLoader = {
+    test: /\.(png|jpe?g)$/i,
+    type: "asset/resource",
+    generator: {
+      filename: "assets/[name].[hash][ext]",
+    },
+  };
+
+  const svgLoader = {
+    test: /\.svg$/,
+    use: [
+      {
+        loader: "@svgr/webpack",
+        options: {
+          icon: true,
+        },
+      },
+    ],
+  };
+
+  return [tsLoader, cssLoader, assetsLoader, svgLoader];
 }
