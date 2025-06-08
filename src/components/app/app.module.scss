@@ -1,0 +1,17 @@
+.button {
+  color: aquamarine;
+  background: #000;
+  &:hover {
+    background: #333;
+  }
+  &:active {
+    background: #555;
+  }
+}
+
+.title {
+  color: #4f8d43;
+  font-size: 2rem;
+  text-align: center;
+  margin: 20px 0;
+}
