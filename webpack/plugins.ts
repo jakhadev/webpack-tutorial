@@ -3,6 +3,7 @@ import { ProgressPlugin, WebpackPluginInstance } from "webpack";
 import { BuildType } from "../types";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
+import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
 
 export function buildPlugins(options: BuildType): WebpackPluginInstance[] {
   const plugins: WebpackPluginInstance[] = [
@@ -11,6 +12,7 @@ export function buildPlugins(options: BuildType): WebpackPluginInstance[] {
 
   if (options.mode === "development") {
     plugins.push(new ProgressPlugin());
+    plugins.push(new ReactRefreshWebpackPlugin());
   }
 
   if (options.mode === "production") {
