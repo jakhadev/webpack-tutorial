@@ -22,6 +22,7 @@ export function buildConfig(options: BuildType): Configuration {
     },
     resolve: buildResolvers(options),
     devServer: buildDevServer({ mode: options.mode }),
-    devtool: options.mode === "development" ? "source-map" : false,
+    devtool:
+      options.mode === "development" ? "inline-source-map" : "source-map",
   };
 }
