@@ -2,6 +2,7 @@ import { RuleSetRule } from "webpack";
 import { BuildType } from "../types";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import ReactRefreshTypeScript from "react-refresh-typescript";
+import removeConsoleLog from "./plugins/removeConsoleLog";
 
 export function buildLoaders({ mode }: BuildType): RuleSetRule[] {
   const tsLoader = {
@@ -76,6 +77,9 @@ export function buildLoaders({ mode }: BuildType): RuleSetRule[] {
           "@babel/preset-typescript",
           ["@babel/preset-react", { runtime: "automatic" }],
         ],
+        plugins: [
+          mode === "production" ? removeConsoleLog() : undefined,
+        ].filter(Boolean),
       },
     },
   };

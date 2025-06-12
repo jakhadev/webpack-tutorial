@@ -10,6 +10,11 @@ const LazyAbout = lazy(() => import("@/pages/about"));
 const LazyContact = lazy(() => import("@/pages/contact"));
 
 const App = () => {
+  console.log("App component rendered");
+  console.log("LazyHome component loaded:", LazyHome);
+  console.log("LazyAbout component loaded:", LazyAbout);
+  console.log("LazyContact component loaded:", LazyContact);
+
   return (
     <>
       <AppNavbar />
