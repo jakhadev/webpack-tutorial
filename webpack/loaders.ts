@@ -64,5 +64,21 @@ export function buildLoaders({ mode }: BuildType): RuleSetRule[] {
     ],
   };
 
-  return [tsLoader, cssLoader, assetsLoader, svgLoader];
+  const babelLoader = {
+    test: /\.(ts|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        targets: "defaults",
+        presets: [
+          "@babel/preset-env",
+          "@babel/preset-typescript",
+          ["@babel/preset-react", { runtime: "automatic" }],
+        ],
+      },
+    },
+  };
+
+  return [babelLoader, cssLoader, assetsLoader, svgLoader];
 }

@@ -38,7 +38,7 @@ export function buildPlugins(options: BuildType): WebpackPluginInstance[] {
     plugins.push(
       new BundleAnalyzerPlugin({
         analyzerMode: "static",
-        openAnalyzer: true,
+        openAnalyzer: false,
         reportFilename: "report.html",
       })
     );
